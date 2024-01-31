@@ -1,4 +1,7 @@
-// @import '..src/styles.scss';
+$fontTitle: 'Lilita One';
+  $main-color: #466195;
+  $secondary-color: #FF984D;
+  $base-color: #F4ECDC;
 
 header{
     position: absolute;
@@ -10,32 +13,32 @@ header{
     
     .fondo1{
         width: 70%;
-        background-color: #F4ECDC;
-        height: 458px;
+        background-color: $base-color;
+        height: 440px;
         align-items: baseline;
     }
     .fondo2{
         width: 30%;
-        background-color: #FF984D;
-        height: 458px;
+        background-color: $secondary-color;
+        height: 440px;
         align-items: baseline;
     }
     p{
-    color:#466195;
+    color:$main-color;
     font-size: 48px;
     width: 624px;
     height: 172px;
-    margin-top: 207px;
+    margin-top: 190px;
     margin-left: 119px;
     position: absolute;
-    // font-family: $fontTitle;
+    font-family: $fontTitle;
     }
     img{
         margin-right: 270px;
         position: absolute;
         width: 309px;
         height: 309px;
-        right: -193px;
+        right: -25px;
         top: 99px;
     }
  }

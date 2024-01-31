@@ -1,9 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
-@font-face {
+  @font-face { 
     font-family: "Lilita One";
-    src: url("../src/LilitaOne-Regular.ttf");
-  }
-  $fontTitle: "Lilita One";
+    src: url("../src/assets/fonts/LilitaOne-Regular.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 body{
     margin: 0px;

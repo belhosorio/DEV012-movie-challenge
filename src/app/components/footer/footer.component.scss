@@ -1,18 +1,23 @@
+$fontTitle: 'Lilita One';
+  $main-color: #466195;
+  $secondary-color: #FF984D;
+  $base-color: #F4ECDC;
+
 footer{
     margin-top: 20px;
     height: 83px;
     width: 100%;
-    background-color: #F4ECDC;
+    background-color: $base-color;
     text-align: center;
     position: static;
     
 
     p {
-    color: #466195;
+    color: $main-color;
     margin-top: 30px;
     display: inline-flex;
     font-size: 16px;
-//    font-family: $fontTitle;
+   font-family: $fontTitle;
 
     }
 }

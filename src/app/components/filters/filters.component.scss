@@ -1,10 +1,15 @@
+$fontTitle: 'Lilita One';
+  $main-color: #466195;
+  $secondary-color: #FF984D;
+  $base-color: #F4ECDC;
+
 h3{
     z-index: 1;
     position: absolute;
     top:30px;
     left: 523px;
-    color: #466195;
-    //    font-family: $fontTitle;
+    color:  $main-color;
+   font-family: $fontTitle;
 }
 #filter-one{
     position: absolute;
