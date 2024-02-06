@@ -1,0 +1,7 @@
+<div class="cards-container">
+  <div class="cardOnly" *ngFor="let cards of cardsMovie">
+    <img [src]="cards.img" alt="{{cards.title}}"/>
+    <h3 class="title">{{ cards.title }}</h3><br>
+    <h4 class="genre">{{ cards.genre_ids }}</h4>
+  </div>
+</div>

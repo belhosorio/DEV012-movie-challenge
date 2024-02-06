@@ -1,13 +1,9 @@
-$fontTitle: 'Lilita One';
-  $main-color: #466195;
-  $secondary-color: #FF984D;
-  $base-color: #F4ECDC;
+@import "../../../styles.scss";
 
 header{
-    position: absolute;
-    top: 0px;
     margin-bottom: 30px;
     display: flex;
+    margin-bottom: 20px;
     width: 100%;
     
     
@@ -43,8 +39,9 @@ header{
     }
  }
  main{
-    height: 1145px;
+    height: auto;
     width: 100%;
     margin-top: 10px;
     margin-bottom: 10px;
+
  }

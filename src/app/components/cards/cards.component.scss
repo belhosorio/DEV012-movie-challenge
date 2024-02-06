@@ -1,0 +1,22 @@
+@import "../../../styles.scss";
+
+.cards-container{
+    background-color: #ffffff;
+    padding: 10px;
+    display: grid;
+    margin-top: 20px;
+    position: relative;
+
+.cardOnly{
+    
+    margin: 10px;
+    background-color: $main-color;
+    height: auto;
+    width: 300px;
+    h4{
+        background-color: aqua;
+    }
+}
+
+
+}
