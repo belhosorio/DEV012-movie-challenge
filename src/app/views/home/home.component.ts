@@ -9,6 +9,7 @@ import { Cards } from '../../interface';
 })
 export class HomeComponent implements OnInit {
   cardsMovie: Cards[] = [];
+  totalItems = 0;
 
   constructor(private dataService: DataService) { }
 
@@ -18,7 +19,10 @@ export class HomeComponent implements OnInit {
 
   getData(): void {
     this.dataService.getAllCards().subscribe(
-      (resp) => this.cardsMovie = resp.results,
+      (resp) => {
+        this.cardsMovie = resp.results;
+        this.totalItems = resp.total_results;
+      }
     );
   }
 }

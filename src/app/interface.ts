@@ -1,6 +1,14 @@
 export interface Cards {
-  img: "https://image.tmdb.org/t/p/w500/{{ cards.poster_path}}"
+  poster_path: object;
   id: number;
   title: string;
-  genre_ids: [number, string];
+  release_date: number; 
+}
+
+export interface CardsDetail {
+  poster_path: object;
+  id: number;
+  title: string;
+  release_date: number; 
+  genre_ids : number;
 }

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output } from '@angular/core';
 import { Cards } from '../../interface';
 
 @Component({
@@ -7,5 +7,5 @@ import { Cards } from '../../interface';
   styleUrls: ['./cards.component.scss']
 })
 export class CardsComponent {
-  @Input() cardsMovie: Cards[] = [];
+ @Input() cardsMovie: Cards[] = [];
 }

@@ -15,9 +15,12 @@ export class DataService {
 
   constructor(private http: HttpClient) {}
 
-  getAllCards(): Observable<{ results: Cards[] }> {
-    return this.http.get<{ results: Cards[] }>(this.dataUrl, { headers: this.dataHeaders }).pipe(
-      map((resp) => resp)
-    );
+  getAllCards(): Observable<{ results: Cards[]; total_results: number }> {
+    return this.http.get<{ results: Cards[]; total_results: number }>(this.dataUrl, { headers: this.dataHeaders });
+  }
+
+  getCardsPage(page: number, pageSize: number): Observable<{ results: Cards[] }> {
+    const url = `${this.dataUrl}?page=${page}&pageSize=${pageSize}`;
+    return this.http.get<{ results: Cards[] }>(url, { headers: this.dataHeaders });
   }
 }

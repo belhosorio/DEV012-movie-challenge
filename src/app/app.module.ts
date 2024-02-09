@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {MatPaginatorIntl, MatPaginatorModule} from '@angular/material/paginator';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,7 +11,11 @@ import { MovieDetailComponent } from './views/movieDetail/movieDetail.component'
 import { FiltersComponent } from './components/filters/filters.component';
 import { LogoComponent } from './components/logo/logo.component';
 import { CardsComponent } from './components/cards/cards.component';
-import { HttpClientModule } from '@angular/common/http';
+import { MyCustomPaginatorIntl } from './paginator-es';
+import { PaginatorComponent } from './components/paginator/paginator.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -19,14 +25,22 @@ import { HttpClientModule } from '@angular/common/http';
     MovieDetailComponent,
     FiltersComponent,
     LogoComponent,
-    CardsComponent
+    CardsComponent,
+    PaginatorComponent,
+  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MatPaginatorModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: MatPaginatorIntl,
+      useClass: MyCustomPaginatorIntl,
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
