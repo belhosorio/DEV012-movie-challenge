@@ -1,12 +1,32 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { Cards } from '../interface'; 
+import { Cards } from '../interface'; //declaraciones de interface
 import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
 })
+// export class DataService {
+//   dataUrl = 'https://api.themoviedb.org/3/';
+//   apiKEY =
+//     '030548a94bbdc857cd0baa0defda02d2'
+//   page: number = 1;
+
+//   constructor(private http: HttpClient) {}
+
+//   getAllCards(): Observable<Cards>{
+//     const urlPage = `${this.dataUrl}/discover/movie?api_key=${this.apiKEY}&page=${this.page}`
+//     return this.http.get<Cards>(urlPage).pipe(map((resp) => resp));
+//    }
+
+//   getCardsGenre(): Observable<Genre[]> {
+//     return this.http.get<Genre[]>(`${this.dataUrl}/genre/movie/list?api_key=${this.apiKEY}`)
+//       .pipe(map((resp) => resp));
+//   }
+
+// }
+
 export class DataService {
   private dataUrl = 'https://api.themoviedb.org/3/discover/movie';
   private dataHeaders = new HttpHeaders({
@@ -15,12 +35,11 @@ export class DataService {
 
   constructor(private http: HttpClient) {}
 
-  getAllCards(): Observable<{ results: Cards[]; total_results: number }> {
-    return this.http.get<{ results: Cards[]; total_results: number }>(this.dataUrl, { headers: this.dataHeaders });
-  }
-
-  getCardsPage(page: number, pageSize: number): Observable<{ results: Cards[] }> {
-    const url = `${this.dataUrl}?page=${page}&pageSize=${pageSize}`;
-    return this.http.get<{ results: Cards[] }>(url, { headers: this.dataHeaders });
+  getAllCards(page:number): Observable<{ results: Cards[] }> {
+    return this.http.get<{ results: Cards[] }>(`${this.dataUrl}?page=${page}`, { headers: this.dataHeaders }).pipe(
+      map((resp) => resp)
+    );
   }
 }
+
+

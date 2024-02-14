@@ -10,19 +10,19 @@ header{
     .fondo1{
         width: 70%;
         background-color: $base-color;
-        height: 440px;
+        height: 385px;
         align-items: baseline;
     }
     .fondo2{
         width: 30%;
         background-color: $secondary-color;
-        height: 440px;
+        height: 385px;
         align-items: baseline;
     }
     p{
     color:$main-color;
-    font-size: 48px;
-    width: 624px;
+    font-size: 40px;
+    width: 606px;
     height: 172px;
     margin-top: 190px;
     margin-left: 119px;
@@ -32,9 +32,8 @@ header{
     img{
         margin-right: 270px;
         position: absolute;
-        width: 309px;
-        height: 309px;
-        right: -25px;
+        width: 236px;
+        right: 35px;
         top: 99px;
     }
  }
@@ -43,6 +42,41 @@ header{
     width: 100%;
     margin-top: 10px;
     margin-bottom: 10px;
+    p{
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: center;
+        font-family: $fontTitle;
+        color:$secondary-color;
+        font-synthesis: none;
+    }
+    .pagination{
+        margin: 20px 450px 40px 450px;
+        background-color: $secondary-color;
+        border-radius: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
 
 
+     
+        .btn{
+            margin: 3px 11px 3px 11px;
+            height: 30px;
+            border: none;
+            color: white;
+            background-color: $secondary-color;
+            font-family: $fontTitle;
+            font-synthesis: none;
+            border-radius: 5px;
+            padding: 10px;
+        
+        }
+        .btn:hover {
+            background-color: #f37e02;
+        }
+        .selected {
+            background-color: #f37e02;
+        }
+    }
  }

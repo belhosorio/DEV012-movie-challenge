@@ -9,6 +9,20 @@
 
 <main>
   <app-cards [cardsMovie] ="cardsMovie"></app-cards>
-  <app-paginator></app-paginator>
+  
+  <p>Peliculas por pagina:  {{cardsMovie.length}}</p>
+  <section class="pagination">
+    <button [ngClass]="{'selected': indexPage === indexPage-1}" class="btn" (click)="cambiarPagina(indexPage-1)" [disabled]="indexPage === 1">Anterior</button>
+    <button [ngClass]="{'selected': indexPage === 1}" class="btn" (click)="cambiarPagina(1)">1</button>
+    <button [ngClass]="{'selected': indexPage === 2}" class="btn" (click)="cambiarPagina(2)">2</button>
+    <button [ngClass]="{'selected': indexPage === 3}" class="btn" (click)="cambiarPagina(3)">3</button>
+    <button [ngClass]="{'selected': indexPage === 4}" class="btn" (click)="cambiarPagina(4)">4</button>
+    <button [ngClass]="{'selected': indexPage === 5}" class="btn" (click)="cambiarPagina(5)">5</button>
+    <button [ngClass]="{'selected': indexPage === 6}" class="btn" (click)="cambiarPagina(6)">6</button>
+    <button [ngClass]="{'selected': indexPage === 7}" class="btn" (click)="cambiarPagina(7)">7</button>
+    <button [ngClass]="{'selected': indexPage === 8}" class="btn" (click)="cambiarPagina(8)">8</button>
+    <button [ngClass]="{'selected': indexPage === indexPage+1}" class="btn" (click)="cambiarPagina(indexPage+1)" [disabled]="indexPage === 8">Posterior</button>
+</section>
+
 </main>
 <app-footer></app-footer>
