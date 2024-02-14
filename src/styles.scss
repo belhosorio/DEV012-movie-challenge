@@ -1,9 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
-@font-face {
+
+$fontTitle: 'Lilita One';
+  $main-color: #466195;
+  $secondary-color: #FF984D;
+  $base-color: #F4ECDC;
+  
+  @font-face { 
     font-family: "Lilita One";
-    src: url("../LilitaOne-Regular.ttf");
-  }
-  $fontTitle: "Lilita One";
+    src: url("../src/assets/fonts/LilitaOne-Regular.ttf") format('truetype');
+}
 
 body{
     margin: 0px;

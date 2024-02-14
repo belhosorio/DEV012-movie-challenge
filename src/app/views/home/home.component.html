@@ -1,12 +1,14 @@
 <header>
+  <app-logo></app-logo>
+  <app-filters></app-filters>
     <div class="fondo1"></div>
     <div class="fondo2"></div>
-    <p>¡Explora nuestro fascinante catálogo de películas inspiradas en libros!</p>
-    <img src="../icono-02.png" alt="icono-peliculas"/>
+    <p>¡Explora nuestro fascinante catálogo de películas!</p>
+    <img src="../assets/icono-02.png" alt="icono-peliculas"/>
 </header>
 
 <main>
-  <p>conjunto  peliculas</p>
-  <div>indice</div>
+  <app-cards [cardsMovie] ="cardsMovie"></app-cards>
+  <app-paginator></app-paginator>
 </main>
 <app-footer></app-footer>

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-movie-detail',
-  templateUrl: './movie-detail.component.html',
-  styleUrls: ['./movie-detail.component.scss']
+  selector: 'app-moviedetail',
+  templateUrl: './movieDetail.component.html',
+  styleUrls: ['./movieDetail.component.scss']
 })
 export class MovieDetailComponent implements OnInit {
 

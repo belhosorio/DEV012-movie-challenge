@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../lib/data.service';
+import { Cards } from '../../interface';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +8,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  cardsMovie: Cards[] = [];
+  totalItems = 0;
 
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
+    this.getData();
   }
 
+  getData(): void {
+    this.dataService.getAllCards().subscribe(
+      (resp) => {
+        this.cardsMovie = resp.results;
+        this.totalItems = resp.total_results;
+      }
+    );
+  }
 }

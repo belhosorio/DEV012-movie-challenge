@@ -1,41 +1,48 @@
-// @import '..src/styles.scss';
+@import "../../../styles.scss";
 
 header{
-    position: absolute;
-    top: 0px;
     margin-bottom: 30px;
     display: flex;
+    margin-bottom: 20px;
     width: 100%;
-    z-index: -1;
+    
     
     .fondo1{
         width: 70%;
-        background-color: #F4ECDC;
-        height: 458px;
+        background-color: $base-color;
+        height: 440px;
         align-items: baseline;
     }
     .fondo2{
         width: 30%;
-        background-color: #FF984D;
-        height: 458px;
+        background-color: $secondary-color;
+        height: 440px;
         align-items: baseline;
     }
     p{
-    color:#466195;
+    color:$main-color;
     font-size: 48px;
     width: 624px;
     height: 172px;
-    margin-top: 207px;
+    margin-top: 190px;
     margin-left: 119px;
     position: absolute;
-    // font-family: $fontTitle;
+    font-family: $fontTitle;
     }
     img{
         margin-right: 270px;
         position: absolute;
         width: 309px;
         height: 309px;
-        right: -193px;
+        right: -25px;
         top: 99px;
     }
+ }
+ main{
+    height: auto;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+
  }
