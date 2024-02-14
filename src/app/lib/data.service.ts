@@ -7,25 +7,6 @@ import { map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root',
 })
-// export class DataService {
-//   dataUrl = 'https://api.themoviedb.org/3/';
-//   apiKEY =
-//     '030548a94bbdc857cd0baa0defda02d2'
-//   page: number = 1;
-
-//   constructor(private http: HttpClient) {}
-
-//   getAllCards(): Observable<Cards>{
-//     const urlPage = `${this.dataUrl}/discover/movie?api_key=${this.apiKEY}&page=${this.page}`
-//     return this.http.get<Cards>(urlPage).pipe(map((resp) => resp));
-//    }
-
-//   getCardsGenre(): Observable<Genre[]> {
-//     return this.http.get<Genre[]>(`${this.dataUrl}/genre/movie/list?api_key=${this.apiKEY}`)
-//       .pipe(map((resp) => resp));
-//   }
-
-// }
 
 export class DataService {
   private dataUrl = 'https://api.themoviedb.org/3/discover/movie';
