@@ -1,18 +1,24 @@
 @import "../../../styles.scss";
 
-h3{
-    z-index: 1;
+.filter{
     position: absolute;
-    top:30px;
-    left: 523px;
-    color:  $main-color;
-   font-family: $fontTitle;
+    top: 50px;
+
+select{
+    color: $main-color;
+    position: absolute;
+    font-family: "Lilita One";
+    background-color: $base-color;
+    font-synthesis: none;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
 }
-#filter-one{
-    position: absolute;
+select:nth-child(1){
     left: 523px;
 }
-#filter-two{
-    position: absolute;
+select:nth-child(2){
     left: 628px;
+    margin-left: 50px;
+}
 }

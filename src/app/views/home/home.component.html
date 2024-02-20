@@ -1,7 +1,7 @@
 <header>
   <app-logo></app-logo>
-  <app-filters></app-filters>
-    <div class="fondo1"></div>
+  <app-filters (btnGenre)="genreBtn($event, indexPage, sortBy)" (btnOrden)="ordenBtn($event, indexPage, idGenre)"></app-filters> 
+  <div class="fondo1"></div>
     <div class="fondo2"></div>
     <p>¡Explora nuestro fascinante catálogo de películas!</p>
     <img src="../assets/icono-02.png" alt="icono-peliculas"/>
@@ -12,16 +12,16 @@
   
   <p>Peliculas por pagina:  {{cardsMovie.length}}</p>
   <section class="pagination">
-    <button [ngClass]="{'selected': indexPage === indexPage-1}" class="btn" (click)="cambiarPagina(indexPage-1)" [disabled]="indexPage === 1">Anterior</button>
-    <button [ngClass]="{'selected': indexPage === 1}" class="btn" (click)="cambiarPagina(1)">1</button>
-    <button [ngClass]="{'selected': indexPage === 2}" class="btn" (click)="cambiarPagina(2)">2</button>
-    <button [ngClass]="{'selected': indexPage === 3}" class="btn" (click)="cambiarPagina(3)">3</button>
-    <button [ngClass]="{'selected': indexPage === 4}" class="btn" (click)="cambiarPagina(4)">4</button>
-    <button [ngClass]="{'selected': indexPage === 5}" class="btn" (click)="cambiarPagina(5)">5</button>
-    <button [ngClass]="{'selected': indexPage === 6}" class="btn" (click)="cambiarPagina(6)">6</button>
-    <button [ngClass]="{'selected': indexPage === 7}" class="btn" (click)="cambiarPagina(7)">7</button>
-    <button [ngClass]="{'selected': indexPage === 8}" class="btn" (click)="cambiarPagina(8)">8</button>
-    <button [ngClass]="{'selected': indexPage === indexPage+1}" class="btn" (click)="cambiarPagina(indexPage+1)" [disabled]="indexPage === 8">Posterior</button>
+    <button [ngClass]="{'selected': indexPage === indexPage-1}" class="btn" (click)="cambiarPagina(indexPage-1,sortBy, idGenre)" [disabled]="indexPage === 1">Anterior</button>
+    <button [ngClass]="{'selected': indexPage === 1}" class="btn" (click)="cambiarPagina(1, sortBy, idGenre)">1</button>
+    <button [ngClass]="{'selected': indexPage === 2}" class="btn" (click)="cambiarPagina(2, sortBy,idGenre)">2</button>
+    <button [ngClass]="{'selected': indexPage === 3}" class="btn" (click)="cambiarPagina(3, sortBy, idGenre)">3</button>
+    <button [ngClass]="{'selected': indexPage === 4}" class="btn" (click)="cambiarPagina(4, sortBy, idGenre)">4</button>
+    <button [ngClass]="{'selected': indexPage === 5}" class="btn" (click)="cambiarPagina(5, sortBy,idGenre)">5</button>
+    <button [ngClass]="{'selected': indexPage === 6}" class="btn" (click)="cambiarPagina(6, sortBy, idGenre)">6</button>
+    <button [ngClass]="{'selected': indexPage === 7}" class="btn" (click)="cambiarPagina(7, sortBy, idGenre)">7</button>
+    <button [ngClass]="{'selected': indexPage === 8}" class="btn" (click)="cambiarPagina(8, sortBy, idGenre)">8</button>
+    <button [ngClass]="{'selected': indexPage === indexPage+1}" class="btn" (click)="cambiarPagina(indexPage+1, sortBy, idGenre)" [disabled]="indexPage === 8">Posterior</button>
 </section>
 
 </main>
