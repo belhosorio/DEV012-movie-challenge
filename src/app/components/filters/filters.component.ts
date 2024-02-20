@@ -8,7 +8,9 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class FiltersComponent implements OnInit {
 
   @Input() idGenre :number = 0;
+  @Input() sortBy: string = "";
   @Output() btnGenre = new EventEmitter<number | null>();
+  @Output() btnOrden = new EventEmitter<string>();
 
   constructor() { }
 
@@ -21,8 +23,8 @@ export class FiltersComponent implements OnInit {
  this.btnGenre.emit(e.target.value);
   }
 
-  filtradoOrden(){
-
+  filtradoOrden(e:any){
+    this.btnOrden.emit(e.target.value);
   }
 
 }

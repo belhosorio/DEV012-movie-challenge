@@ -22,16 +22,16 @@
   <option value="37">Western</option>
   </select>
 
-  <select (change)="filtradoOrden">
+  <select (change)="filtradoOrden($event)">
     <option disabled selected value="">Ordenar por</option>
+    <option value="popularity.desc">Más Populares</option>
+    <option value="popularity.asc">Menos populares</option>
     <option value="title.asc">Titulo Ascendente</option>
     <option value="title.desc">Titulo Descendente</option>
-    <option value="popularity.asc">Mas Populares</option>
-    <option value="popularity.desc">Menos populares</option>
-    <option value="primary_release_date.asc">Estreno Ascendente</option>
-    <option value="primary_release_date.desc">Estreno Descendente</option>
-    <option value="vote_average.asc">Mejores Votadas</option>
-    <option value="vote_average.desc">Menores Votadas</option>
+    <option value="primary_release_date.asc">Estrenos Pasados</option>
+    <option value="primary_release_date.desc">Estrenos Recientes</option>
+    <option value="vote_count.desc">Más Votadas</option>
+    <option value="vote_count.asc">Menos Votadas</option>
   
 </select>
 </div>

@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { Cards, Genre } from '../interface'; 
+import { Cards } from '../interface'; 
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -16,13 +16,13 @@ export class DataService {
 
   constructor(private http: HttpClient) {}
 
-  getAllCards(page:number): Observable<{ results: Cards[] }> {
-    return this.http.get<{ results: Cards[] }>(`${this.dataUrl}discover/movie?page=${page}&sort_by=popularity.desc`, { headers: this.dataHeaders }).pipe(
+  getAllCards(page:number, sort_by: string): Observable<{ results: Cards[] }> {
+    return this.http.get<{ results: Cards[] }>(`${this.dataUrl}discover/movie?page=${page}&sort_by=${sort_by}`, { headers: this.dataHeaders }).pipe(
       map((resp) => resp)
     );
   }
-  getWithGenre(page:number, genre_ids:number): Observable<{ results: Cards[] }> {
-    return this.http.get<{ results: Cards[] }>(`${this.dataUrl}discover/movie?page=${page}&sort_by=popularity.desc&with_genres=${genre_ids}`, { headers: this.dataHeaders }).pipe(
+  getWithGenre(page:number, genre_ids:number, sort_by: string): Observable<{ results: Cards[] }> {
+    return this.http.get<{ results: Cards[] }>(`${this.dataUrl}discover/movie?page=${page}&sort_by=${sort_by}&with_genres=${genre_ids}`, { headers: this.dataHeaders }).pipe(
       map((resp) => resp)
     );
   }
