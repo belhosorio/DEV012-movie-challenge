@@ -8,9 +8,10 @@ import { Cards } from '../../interface';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  // cardsGenre: Genre = { genres: [] };
+
   cardsMovie: Cards[] =[]
   indexPage: number = 1;
+  idGenre : number | null = null;
 
   constructor(private _dataService: DataService) {}
 
@@ -18,23 +19,32 @@ export class HomeComponent implements OnInit {
     this.getData(this.indexPage);
   }
 
-  getData(page: number): void {
+// data por defecto
+  getData(page:number): void {
     this._dataService.getAllCards(page).subscribe(
       (resp) => (this.cardsMovie = resp.results),
-
+    );
+  }
+//data cuando se seleciona un genero
+  getGenre(page:number, genre_ids: number): void {
+    this._dataService.getWithGenre(page, genre_ids).subscribe(
+      (resp) => (this.cardsMovie = resp.results),
     );
   }
 
-  cambiarPagina(page: number) {
-    this.getData(page);
-    this.indexPage = page;
-  }
-}
+    cambiarPagina(page: number) {
+      this.indexPage = page;
+      this.getData(page);
+      
+    }
 
-   // getGenre(): void {
-  //   this._dataService.getCardsGenre().subscribe(
-  //     (resp: Genre) => {
-  //       this.cardsGenre = resp;
-  //     },
-  //   );
-  // }
+    genreBtn(e: number | null, page: number) {
+      if (e !== null) {
+        this.getGenre(page, e);
+      } else {
+        this.getData(page);
+      }
+    }
+}
+ 
+
