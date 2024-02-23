@@ -26,6 +26,9 @@ export class DataService {
       map((resp) => resp)
     );
   }
-
-
+  getDetail(id:number): Observable<Cards>{
+  return this.http.get<Cards>(`${this.dataUrl}/movie/${id}?language=en-US`, { headers: this.dataHeaders }).pipe(
+    map((resp) => resp)
+  );
+}
 }

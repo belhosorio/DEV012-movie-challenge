@@ -1,5 +1,6 @@
-import { Component, Input, Output } from '@angular/core';
+import { Component, Input} from '@angular/core';
 import { Cards } from '../../interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cards',
@@ -8,4 +9,15 @@ import { Cards } from '../../interface';
 })
 export class CardsComponent {
  @Input() cardsMovie: Cards[] = [];
+
+ constructor(
+  private router:Router
+ ){
+
+ }
+ goToDetail(id:number){
+ this.router.navigate(["/movieDetail", id
+ ])
+ }
+
 }
