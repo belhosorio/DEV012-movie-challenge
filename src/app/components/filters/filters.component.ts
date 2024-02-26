@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output,  ViewChild  } from '@angular/core';
 
 @Component({
   selector: 'app-filters',
@@ -11,6 +11,9 @@ export class FiltersComponent implements OnInit {
   @Input() sortBy: string = "";
   @Output() btnGenre = new EventEmitter<number | null>();
   @Output() btnOrden = new EventEmitter<string>();
+  @Output() btnLimpiar = new EventEmitter<any>();
+  @ViewChild('generoSelect') generoSelect: any;
+  @ViewChild('ordenSelect') ordenSelect: any;
 
   constructor() { }
 
@@ -27,4 +30,19 @@ export class FiltersComponent implements OnInit {
     this.btnOrden.emit(e.target.value);
   }
 
+  borrar($event: any) {
+    this.btnGenre.emit(null);
+    this.btnOrden.emit('');
+
+    // Restablecer los select
+    if (this.generoSelect) {
+      this.generoSelect.nativeElement.selectedIndex = 0;
+    }
+    if (this.ordenSelect) {
+      this.ordenSelect.nativeElement.selectedIndex = 0;
+    }
+
+    this.btnLimpiar.emit($event);
+  }
 }
+

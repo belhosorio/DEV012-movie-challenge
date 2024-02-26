@@ -7,7 +7,7 @@
 select{
     color: $main-color;
     position: absolute;
-    font-family: "Lilita One";
+    font-family: $fontTitle;
     background-color: $base-color;
     font-synthesis: none;
     font-size: 16px;
@@ -20,5 +20,22 @@ select:nth-child(1){
 select:nth-child(2){
     left: 628px;
     margin-left: 50px;
+}
+button{
+    font-family: $fontTitle;
+    font-synthesis: none;
+    background-color:$main-color;
+    border-radius: 7px;
+    color:$base-color;
+    position: absolute;
+    top: -3px;
+    left: 906px;
+    border: none;
+    height: 30px;
+    width: 54px;
+}
+button:hover{
+    background-color: #3b65b6;
+    color:#ffcc3c;
 }
 }

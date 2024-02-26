@@ -10,6 +10,7 @@ import { MovieDetailComponent } from './views/movieDetail/movieDetail.component'
 import { FiltersComponent } from './components/filters/filters.component';
 import { LogoComponent } from './components/logo/logo.component';
 import { CardsComponent } from './components/cards/cards.component';
+import { DetailCardComponent } from './components/detail-card/detail-card.component';
 
 
 
@@ -24,6 +25,7 @@ import { CardsComponent } from './components/cards/cards.component';
     FiltersComponent,
     LogoComponent,
     CardsComponent,
+    DetailCardComponent,
   
   ],
   imports: [

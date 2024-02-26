@@ -1,5 +1,5 @@
 <div class="filter">
-<select (change)="filtradoGenero($event)">
+<select #generoSelect (change)="filtradoGenero($event)">
   <option disabled selected value="">Genero</option>
   <option value="28">Action</option>
   <option value="12">Adventure</option>
@@ -22,7 +22,7 @@
   <option value="37">Western</option>
   </select>
 
-  <select (change)="filtradoOrden($event)">
+  <select #ordenSelect (change)="filtradoOrden($event)">
     <option disabled selected value="">Ordenar por</option>
     <option value="popularity.desc">Más Populares</option>
     <option value="popularity.asc">Menos populares</option>
@@ -34,4 +34,6 @@
     <option value="vote_count.asc">Menos Votadas</option>
   
 </select>
+
+<button (click)="borrar($event)">Borrar</button>
 </div>

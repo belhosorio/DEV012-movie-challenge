@@ -1,0 +1,33 @@
+@import "../../../styles.scss";
+
+header{
+    margin-bottom: 30px;
+    display: flex;
+    margin-bottom: 20px;
+    width: 100%;
+.fondo1{
+    width: 70%;
+    background-color: $base-color;
+    height: 93px;
+    align-items: baseline;
+}
+.fondo2{
+    width: 30%;
+    background-color: $secondary-color;
+    height: 93px;
+    align-items: baseline;
+}
+}
+img{
+    width: 52px;
+    position: absolute;
+    top: 123px;
+    left: 81px;
+}
+p{
+    position: absolute;
+    top: 120px;
+    left: 142px;
+    font-family: $fontTitle;
+    color: $main-color;
+}

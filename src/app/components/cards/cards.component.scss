@@ -9,7 +9,10 @@
     flex-flow: wrap;
     justify-content: center;
     
-
+a{
+    text-decoration: none;
+    display: contents;
+}
 .cardOnly{
     border-radius: 15px;
     margin: 10px;
@@ -23,16 +26,33 @@
     img{
         border-radius: 15px 15px 0 0;
         width: 230px;
+        height: 345px;
     }
-    h3{
-        color: #ffffff; 
-       margin-top: 10px;
-        padding: 0px 10px;
-    }
-    h4{
-       
+    .year{
+        position: relative;
+        z-index: 2;
         color: $secondary-color;
-        margin-top: -10px;
+        padding: 0px 10px;
+        font-size: 14px;
+        position: relative;
+        right: -81px;
+        bottom: -64px;
+    }
+    .title{
+        position: relative;
+        top: -40px;
+        z-index: 1;
+        color: #ffffff;
+        padding: 0px 10px;
+        font-size: 16px;
+    }
+    .genre{
+        position: relative;
+        color: $secondary-color;    
+       top: -45px;
+       z-index: 2;
+       padding: 0px 10px;
+       font-size: 14px;
     }
 }
 

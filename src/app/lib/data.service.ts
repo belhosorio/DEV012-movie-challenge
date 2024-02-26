@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { Cards } from '../interface'; 
+import { Cards, Detail, Genre } from '../interface'; 
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -17,15 +17,24 @@ export class DataService {
   constructor(private http: HttpClient) {}
 
   getAllCards(page:number, sort_by: string): Observable<{ results: Cards[] }> {
-    return this.http.get<{ results: Cards[] }>(`${this.dataUrl}discover/movie?page=${page}&sort_by=${sort_by}`, { headers: this.dataHeaders }).pipe(
+    return this.http.get<{ results: Cards[] }>(`${this.dataUrl}discover/movie??include_adult=false&language=es&page=${page}&sort_by=${sort_by}`, { headers: this.dataHeaders }).pipe(
       map((resp) => resp)
     );
   }
   getWithGenre(page:number, genre_ids:number, sort_by: string): Observable<{ results: Cards[] }> {
-    return this.http.get<{ results: Cards[] }>(`${this.dataUrl}discover/movie?page=${page}&sort_by=${sort_by}&with_genres=${genre_ids}`, { headers: this.dataHeaders }).pipe(
+    return this.http.get<{ results: Cards[] }>(`${this.dataUrl}discover/movie?include_adult=false&language=es&page=${page}&sort_by=${sort_by}&with_genres=${genre_ids}`, { headers: this.dataHeaders }).pipe(
       map((resp) => resp)
     );
   }
-
+  getDetail(id:number): Observable<Detail>{
+  return this.http.get<Detail>(`${this.dataUrl}/movie/${id}?language=es`, { headers: this.dataHeaders }).pipe(
+    map((resp) => resp)
+  );
+}
+// getIdGenre(id:number, name: string): Observable<{ results: Genre[] }> {
+//   return this.http.get<{ results: Genre[] }>(`${this.dataUrl}genre/movie/list?language=es`, { headers: this.dataHeaders }).pipe(
+//     map((resp) => resp)
+//   );
+// }
 
 }
