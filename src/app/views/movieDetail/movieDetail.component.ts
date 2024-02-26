@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Cards } from 'src/app/interface';
+import { Detail } from 'src/app/interface';
 import { DataService } from 'src/app/lib/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-moviedetail',
@@ -10,11 +11,13 @@ import { DataService } from 'src/app/lib/data.service';
 })
 export class MovieDetailComponent implements OnInit {
   idParams : number| null = null;
-  detailCard: Cards| null = null ;
+  detailCard: Detail| null = null ;
+  // indexPage: number = 1;
 
   constructor(
     private ruta:ActivatedRoute,
-    private _dataService: DataService) {}
+    private _dataService: DataService,
+    private router:Router) {}
 
   
   ngOnInit(): void {
@@ -26,4 +29,7 @@ if(this.idParams != null){
 })
 }}
 
+volver(){
+this.router.navigate(["/home"]);
+}
 }

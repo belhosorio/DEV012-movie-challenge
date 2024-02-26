@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Cards } from 'src/app/interface';
+import { Detail } from 'src/app/interface';
 
 @Component({
   selector: 'app-detail-card',
@@ -8,7 +8,8 @@ import { Cards } from 'src/app/interface';
 })
 export class DetailCardComponent implements OnInit {
 
-  @Input() detailCard: Cards| null = null;
+  @Input() detailCard: any;
+  imgDetail:boolean = true;
 
   constructor() {
     console.log('Constructor - detailCard:', this.detailCard);

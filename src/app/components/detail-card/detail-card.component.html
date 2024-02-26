@@ -1,11 +1,16 @@
 <div class="detail-container">
   <div class="detailOnly">
-   <img src="https://image.tmdb.org/t/p/w500/{{ cards.poster_path}}" alt="{{cards.title}}" />
-    <h3 class="title">{{cards.title}}</h3>
-    <h4 class="vote-count">{{cards.vote_count}}</h4>
-    <h3 class="vote_average">{{cards.vote_average}}</h3>
-    <h4 class="year">{{cards.release_date}}</h4>
-    <h4 class="genre">{{cards.genre_ids}}</h4>
-    <p class="description">{{detailCard.overview}}</p>
-  </div>
+   <img class="img-poster"  *ngIf="imgDetail"src="https://image.tmdb.org/t/p/w500/{{ detailCard?.poster_path}}" alt="{{detailCard.title}}" />
+   <img class="img-poster" *ngIf="!imgDetail" src="../../../assets/imagennoencontrada.png"/>
+   <div class="text"> 
+    <div class="fondo"> <p class="year">{{detailCard?.release_date | date: "y"}}</p></div>
+    <h3 class="title">{{detailCard?.title}}</h3>
+    <div id="fondo-star"> <img id="star" src="../../../assets/star.png" alt="star"/>
+    <p class="vote_average"> {{detailCard.vote_average}}</p></div>
+    <p class="p-two">Genero:</p><br>
+    <p class="genre"> {{detailCard.genre_ids}}</p>
+    <p class="p-three">Descripción:</p><br>
+    <p class="description">{{detailCard?.overview}}</p>
+</div>
+</div>
 </div>

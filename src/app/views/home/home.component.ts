@@ -62,7 +62,6 @@ cambiarPagina(page: number, sort_by: string, genre_ids?: number | null) {
 }
 
 
-
 }
  
 
