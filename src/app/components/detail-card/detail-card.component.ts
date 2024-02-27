@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Detail } from 'src/app/interface';
+import { DataService } from 'src/app/lib/data.service';
 
 @Component({
   selector: 'app-detail-card',
@@ -11,12 +12,12 @@ export class DetailCardComponent implements OnInit {
   @Input() detailCard: any;
   imgDetail:boolean = true;
 
-  constructor() {
-    console.log('Constructor - detailCard:', this.detailCard);
+  constructor(
+    public _dataService: DataService
+  ) {
   }
 
   ngOnInit(): void {
-    console.log(this.detailCard)
   }
 
 }

@@ -28,32 +28,37 @@ a{
         width: 230px;
         height: 345px;
     }
+    
+    .title{
+        position: relative;
+        top: -8px;
+        z-index: 1;
+        color: #ffffff;
+        padding: 0px 10px;
+        font-size: 16px;
+        z-index: 1;
+    }
+    .genre{
+        position: relative;
+        color: $secondary-color;    
+       top: -10px;
+       z-index: 2;
+       padding: 0px 10px;
+       font-size: 14px;
+    }
     .year{
         position: relative;
-        z-index: 2;
+        z-index: 3;
         color: $secondary-color;
         padding: 0px 10px;
         font-size: 14px;
         position: relative;
         right: -81px;
-        bottom: -64px;
+        bottom: 4px;
     }
-    .title{
-        position: relative;
-        top: -40px;
-        z-index: 1;
-        color: #ffffff;
-        padding: 0px 10px;
-        font-size: 16px;
-    }
-    .genre{
-        position: relative;
-        color: $secondary-color;    
-       top: -45px;
-       z-index: 2;
-       padding: 0px 10px;
-       font-size: 14px;
-    }
+}
+.cardOnly:hover{
+    background-color: #274377;
 }
 
 

@@ -1,14 +1,16 @@
 <div class="detail-container">
   <div class="detailOnly">
-   <img class="img-poster"  *ngIf="imgDetail"src="https://image.tmdb.org/t/p/w500/{{ detailCard?.poster_path}}" alt="{{detailCard.title}}" />
-   <img class="img-poster" *ngIf="!imgDetail" src="../../../assets/imagennoencontrada.png"/>
+   <img class="img-poster"  *ngIf="detailCard.poster_path"src="https://image.tmdb.org/t/p/w500/{{ detailCard?.poster_path}}" alt="{{detailCard.title}}" />
+   <img class="img-poster" *ngIf="!detailCard.poster_path" src="../../../assets/imagennoencontrada.png"/>
    <div class="text"> 
     <div class="fondo"> <p class="year">{{detailCard?.release_date | date: "y"}}</p></div>
     <h3 class="title">{{detailCard?.title}}</h3>
     <div id="fondo-star"> <img id="star" src="../../../assets/star.png" alt="star"/>
     <p class="vote_average"> {{detailCard.vote_average}}</p></div>
     <p class="p-two">Genero:</p><br>
-    <p class="genre"> {{detailCard.genre_ids}}</p>
+    <p class="genre">{{ _dataService.getIdGenres(detailCard.genre_ids) | async | json }}</p>
+
+    <!-- <p class="genre"> {{detailCard.genre_ids}}</p> -->
     <p class="p-three">Descripción:</p><br>
     <p class="description">{{detailCard?.overview}}</p>
 </div>
