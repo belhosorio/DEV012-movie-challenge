@@ -1,9 +1,9 @@
 <div class="cards-container">
   <div  (click) ="goToDetail(cards.id)" class="cardOnly" *ngFor="let cards of cardsMovie">
-    <img *ngIf="imgMovie" src="https://image.tmdb.org/t/p/w500/{{ cards?.poster_path }}" alt="{{ cards.title }}"/>
-    <img *ngIf="!imgMovie" src="../../../assets/imagennoencontrada.png"/>
-   <p class="year">{{ cards?.release_date | date: "y" }}</p>
+    <img *ngIf="cards.poster_path" src="https://image.tmdb.org/t/p/w500/{{ cards?.poster_path }}" />
+    <img *ngIf="!cards.poster_path" src="../../../assets/imagennoencontrada.png" />
     <p class="title">{{ cards.title }}</p>
-    <p class="genre">{{ cards.genre_ids }}</p>
+    <!-- <p class="genre">{{ cards?.genres[0].name }}</p> -->
+    <p class="year">{{ cards?.release_date | date: "y" }}</p>
   </div>
 </div>

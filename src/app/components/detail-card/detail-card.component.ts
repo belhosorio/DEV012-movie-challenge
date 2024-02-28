@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Detail } from 'src/app/interface';
+import { Detail, Genre } from 'src/app/interface';
+import { DataService } from 'src/app/lib/data.service';
 
 @Component({
   selector: 'app-detail-card',
@@ -8,15 +9,23 @@ import { Detail } from 'src/app/interface';
 })
 export class DetailCardComponent implements OnInit {
 
-  @Input() detailCard: any;
-  imgDetail:boolean = true;
+  @Input() detailCard: any; 
+  genreNames: Genre[] = []; 
 
-  constructor() {
-    console.log('Constructor - detailCard:', this.detailCard);
-  }
+  constructor(
+    private _dataService: DataService
+  ) {}
 
   ngOnInit(): void {
-    console.log(this.detailCard)
+   
   }
-
+  getGenresName(): string {
+    if (this.detailCard && this.detailCard.genres) {
+      return this.detailCard.genres.map((genre: { name: any; }) => genre.name).join(', ');
+    } else {
+      return '';
+    }
+  }
 }
+
+ 

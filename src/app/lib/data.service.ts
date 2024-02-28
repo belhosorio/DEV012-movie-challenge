@@ -16,25 +16,33 @@ export class DataService {
 
   constructor(private http: HttpClient) {}
 
+//peticion de peliculas con parametros page y sort_by
   getAllCards(page:number, sort_by: string): Observable<{ results: Cards[] }> {
-    return this.http.get<{ results: Cards[] }>(`${this.dataUrl}discover/movie??include_adult=false&language=es&page=${page}&sort_by=${sort_by}`, { headers: this.dataHeaders }).pipe(
+    return this.http.get<{ results: Cards[] }>(`${this.dataUrl}discover/movie?include_adult=false&include_video=false&language=es-MX&page=${page}&sort_by=${sort_by}`, { headers: this.dataHeaders }).pipe(
       map((resp) => resp)
     );
   }
+
+  //peticion de peliculas por genero con parametros page y sort_by
   getWithGenre(page:number, genre_ids:number, sort_by: string): Observable<{ results: Cards[] }> {
-    return this.http.get<{ results: Cards[] }>(`${this.dataUrl}discover/movie?include_adult=false&language=es&page=${page}&sort_by=${sort_by}&with_genres=${genre_ids}`, { headers: this.dataHeaders }).pipe(
+    return this.http.get<{ results: Cards[] }>(`${this.dataUrl}discover/movie?include_adult=false&include_video=false&language=es-MX&page=${page}&sort_by=${sort_by}&with_genres=${genre_ids}`, { headers: this.dataHeaders }).pipe(
       map((resp) => resp)
     );
   }
+
+  //peticion de peliculas en detalle
   getDetail(id:number): Observable<Detail>{
-  return this.http.get<Detail>(`${this.dataUrl}/movie/${id}?language=es`, { headers: this.dataHeaders }).pipe(
+  return this.http.get<Detail>(`${this.dataUrl}/movie/${id}?language=es-MX`, { headers: this.dataHeaders }).pipe(
     map((resp) => resp)
   );
 }
-// getIdGenre(id:number, name: string): Observable<{ results: Genre[] }> {
-//   return this.http.get<{ results: Genre[] }>(`${this.dataUrl}genre/movie/list?language=es`, { headers: this.dataHeaders }).pipe(
-//     map((resp) => resp)
-//   );
+
+//peticion de lista de generos con parametros de id y name
+// getIdGenre(id: number, name: string): Observable<Genre[]> {
+//   return this.http.get<Genre[]>(`${this.dataUrl}/genre/movie/list?language=es`, { headers: this.dataHeaders })
+//     .pipe(
+//       map((resp) => resp)
+//     );
 // }
 
 }

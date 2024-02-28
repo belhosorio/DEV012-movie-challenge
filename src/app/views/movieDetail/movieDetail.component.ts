@@ -4,6 +4,7 @@ import { Detail } from 'src/app/interface';
 import { DataService } from 'src/app/lib/data.service';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-moviedetail',
   templateUrl: './movieDetail.component.html',
