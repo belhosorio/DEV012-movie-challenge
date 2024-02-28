@@ -1,8 +1,7 @@
 import { Component, Input} from '@angular/core';
-import { Cards } from '../../interface';
+import { Cards, Genre } from '../../interface';
 import { Router } from '@angular/router';
 import { DataService } from 'src/app/lib/data.service';
-// import { Observable, map } from 'rxjs';
 
 @Component({
   selector: 'app-cards',
@@ -11,11 +10,11 @@ import { DataService } from 'src/app/lib/data.service';
 })
 export class CardsComponent {
  @Input() cardsMovie: Cards[] = [];
-nameGenre: string | null ='';
+//  genreNames: Genre[] = []; 
 
  constructor(
   private router:Router,
-  public _dataService: DataService
+  private _dataService: DataService
  ){
 
  }
