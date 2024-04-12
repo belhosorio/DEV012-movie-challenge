@@ -1,12 +1,12 @@
 <div class="detail-container">
   <div class="detailOnly">
-   <img class="img-poster"  *ngIf="detailCard.poster_path"src="https://image.tmdb.org/t/p/w500/{{ detailCard?.poster_path}}" alt="{{detailCard.title}}" />
-   <img class="img-poster" *ngIf="!detailCard.poster_path" src="../../../assets/imagennoencontrada.png"/>
+   <img class="img-poster"  *ngIf="detailCard?.poster_path"src="https://image.tmdb.org/t/p/w500/{{ detailCard?.poster_path}}" alt="{{detailCard.title}}" />
+   <img class="img-poster" *ngIf="!detailCard?.poster_path" src="../../../assets/imagennoencontrada.png"/>
    <div class="text"> 
     <div class="fondo"> <p class="year">{{detailCard?.release_date | date: "y"}}</p></div>
     <h3 class="title">{{detailCard?.title}}</h3>
     <div id="fondo-star"> <img id="star" src="../../../assets/star.png" alt="star"/>
-    <p class="vote_average"> {{detailCard.vote_average}}</p></div>
+    <p class="vote_average"> {{detailCard?.vote_average}}</p></div>
     <p class="p-two">Genero:</p><br>
     
     <!-- da solo el primer genero
@@ -18,8 +18,8 @@
     </div>
 
     <p class="p-three">Descripción:</p><br>
-    <p class="description" *ngIf="detailCard.overview">{{detailCard?.overview}}</p>
-    <p class="description" *ngIf="!detailCard.overview">Esta pelicula no posee descripción.</p>
+    <p class="description" *ngIf="detailCard?.overview">{{detailCard?.overview}}</p>
+    <p class="description" *ngIf="!detailCard?.overview">Esta pelicula no posee descripción.</p>
 </div>
 </div>
 </div>

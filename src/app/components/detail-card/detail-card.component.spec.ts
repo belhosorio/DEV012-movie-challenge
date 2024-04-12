@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClient, HttpHandler } from '@angular/common/http';
 import { DetailCardComponent } from './detail-card.component';
 
 describe('DetailCardComponent', () => {
@@ -8,7 +8,8 @@ describe('DetailCardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DetailCardComponent ]
+      declarations: [ DetailCardComponent ],
+      providers: [ HttpClient, HttpHandler ]
     })
     .compileComponents();
 

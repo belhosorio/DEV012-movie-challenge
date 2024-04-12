@@ -3,12 +3,13 @@ import { ActivatedRoute } from '@angular/router';
 import { Detail } from 'src/app/interface';
 import { DataService } from 'src/app/lib/data.service';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 
 @Component({
   selector: 'app-moviedetail',
   templateUrl: './movieDetail.component.html',
-  styleUrls: ['./movieDetail.component.scss']
+  styleUrls: ['./movieDetail.component.scss'],
 })
 export class MovieDetailComponent implements OnInit {
   idParams : number| null = null;
@@ -18,7 +19,8 @@ export class MovieDetailComponent implements OnInit {
   constructor(
     private ruta:ActivatedRoute,
     private _dataService: DataService,
-    private router:Router) {}
+    private router:Router,
+    private location: Location) {}
 
   
   ngOnInit(): void {
@@ -30,7 +32,9 @@ if(this.idParams != null){
 })
 }}
 
-volver(){
-this.router.navigate(["/home"]);
+goBack(){
+  this.location.back();
 }
 }
+
+// this.router.navigate(["/home"]);

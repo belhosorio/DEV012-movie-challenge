@@ -37,12 +37,6 @@ export class DataService {
   );
 }
 
-//peticion de lista de generos con parametros de id y name
-// getIdGenre(id: number, name: string): Observable<Genre[]> {
-//   return this.http.get<Genre[]>(`${this.dataUrl}/genre/movie/list?language=es`, { headers: this.dataHeaders })
-//     .pipe(
-//       map((resp) => resp)
-//     );
-// }
+
 
 }

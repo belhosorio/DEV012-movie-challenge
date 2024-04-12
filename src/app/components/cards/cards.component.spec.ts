@@ -1,14 +1,15 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClient, HttpHandler } from '@angular/common/http';
 import { CardsComponent } from './cards.component';
 
-describe('MovieHomeComponent', () => {
+describe('CardsComponent', () => {
   let component: CardsComponent;
   let fixture: ComponentFixture<CardsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CardsComponent ]
+      declarations: [ CardsComponent ],
+      providers: [ HttpClient, HttpHandler ]
     })
     .compileComponents();
 
