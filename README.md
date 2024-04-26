@@ -21,55 +21,55 @@ Esta aplicación ha sido diseñada como una Single Page Application (SPA) con el
 
 ## 4. Historias de Usuario
 
-[Historia de usuario 1] Listado de películas
-Descripción: Yo como usuaria quiero visualizar en un tabla (filas y columnas) el catálogo de películas.
+[Historia de usuario 1] Listado de películas<br>
+Descripción: Yo como usuaria quiero visualizar en un tabla (filas y columnas) el catálogo de películas.<br>
 Criterios de aceptación:
 -Se debe usar el endpoint /discover/movie.
 -La aplicación cuenta con una paginación para explorar el catálogo por páginas.
--Para cada película se debe mostrar como mínimo: poster, título original y año de lanzamiento.
+-Para cada película se debe mostrar como mínimo: poster, título original y año de lanzamiento.<br>
 Definición de terminado: Los componentes desarrollados deben contar con test unitarios.
 
-[Historia de usuario 2] Filtro y ordenamiento
-Descripción: Yo como usuaria quiero filtrar y ordenar el catálogo de películas usando los criterios soportados por TheMovie Database API V3.
+[Historia de usuario 2] Filtro y ordenamiento<br>
+Descripción: Yo como usuaria quiero filtrar y ordenar el catálogo de películas usando los criterios soportados por TheMovie Database API V3.<br>
 Criterios de aceptación:
 -Para filtrar se debe usar el endpoint /discover/movie, y alguno de sus parámetros como por ejemplo with_genres.
 -Para ordenar se debe usar el endpoint /discover/movie, y alguno de sus parámetros como por ejemplo sort_by.
 -La paginación debe conservar el filtro y ordenamiento
--Para cada película se debe mostrar como mínimo: poster, título original y año de lanzamiento.
+-Para cada película se debe mostrar como mínimo: poster, título original y año de lanzamiento.<br>
 Definición de terminado: Los componentes desarrollados deben contar con test unitarios.
 
-[Historia de usuario 3] Detalle de una película
-Descripción: Yo como usuaria quiero consultar los detalles de una película.
+[Historia de usuario 3] Detalle de una película<br>
+Descripción: Yo como usuaria quiero consultar los detalles de una película.<br>
 Criterios de aceptación:
 -Se debe usar el endpoint /movie/{movie_id}.
 -Para la película se debe mostrar como mínimo: poster, título original, año de lanzamiento, géneros, promedio de votación y total de votos.
--La interfaz debe permitir retornar al listado de películas conservando el filtro y ordenamiento.
+-La interfaz debe permitir retornar al listado de películas conservando el filtro y ordenamiento.<br>
 Definición de terminado: Los componentes desarrollados deben contar con test unitarios.
 
 ## 5. Prototipado
-El Product Owner nos entrega una primera iteración del prototipo de baja fidelidad de la aplicación.
-<img src="../movie-challenge/src/assets/Prototipo de baja fidelidad - vista home.png" width="600" alt="Prototipo baja vista home"><br>
+El Product Owner nos entrega una primera iteración del prototipo de baja fidelidad de la aplicación.<br>
+<img src="/src/assets/Prototipo de baja fidelidad - vista home.png" width="600" alt="Prototipo baja vista home"><br>
 Vista Home
 <br>
-<img src="../movie-challenge/src/assets/Prototipo de baja fidelidad - vista detalle.png" width="600" alt="Prototipo baja vista detalle"><br>
+<img src="/src/assets/Prototipo de baja fidelidad - vista detalle.png" width="600" alt="Prototipo baja vista detalle"><br>
 Vista Detalle
 <br>
 
-Luego de tener nuestro prototipo de baja fidelidad (wireframe), se realizo un prototipo de alta fidelidad (mockup) en figma.
-<img src="../movie-challenge/src/assets/estilo grafico.png" width="600" alt="Estilo grafico"><br>
+Luego de tener nuestro prototipo de baja fidelidad (wireframe), se realizo un prototipo de alta fidelidad (mockup) en figma.<br>
+<img src="/src/assets/estilo grafico.png" width="600" alt="Estilo grafico"><br>
 Estilo Grafico
 <br>
-<img src="../movie-challenge/src/assets/prototitpo alta fidelidad vista home.png" width="600" alt="Prototipo alta vista home"><br>
+<img src="/src/assets/prototitpo alta fidelidad vista home.png" width="600" alt="Prototipo alta vista home"><br>
 Vista Home
 <br>
-<img src="../movie-challenge/src/assets/prototipo alta fidelidad vista detalle.png" width="600" alt="Prototipo alta vista detalle"><br>
+<img src="/src/assets/prototipo alta fidelidad vista detalle.png" width="600" alt="Prototipo alta vista detalle"><br>
 Vista Detalle
 <br>
 
 ## 6. Despliegue
 
-Por último, el proyecto fue desplegado en <a href="https://vercel.com/home" title="Link vercel">Vercel</a>, una plataforma de despliegue que ofrece la capacidad de implementar nuestra aplicación web de manera eficiente y confiable
-<img src="../movie-challenge/src/assets/sitioweb.jpg" width="600" alt="Sitio web"><br>
+Por último, el proyecto fue desplegado en <a href="https://vercel.com/home" title="Link vercel">Vercel</a>, una plataforma de despliegue que ofrece la capacidad de implementar nuestra aplicación web de manera eficiente y confiable<br>
+<img src="/src/assets/sitioweb.jpg" width="600" alt="Sitio web">
 ___
 
 Belén Osorio
